@@ -18,7 +18,7 @@ jobs:
       - name: Setup Android NDK
         uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r26d
+          ndk-version: r27
       - name: Build CI Version
         run: cd jni ; ndk-build
       - name: Upload Artifact
