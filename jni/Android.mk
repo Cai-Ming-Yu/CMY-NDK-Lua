@@ -14,10 +14,10 @@ LOCAL_MODULE := NDK-Lua
 
 LOCAL_MODULE_FILENAME := ndk-lua
 
-COMMAND := -static -Wl,--strip-all -O3 -fPIC -pipe -g0 -flto=thin -Wl,--gc-sections -ffunction-sections -fdata-sections -falign-functions -falign-loops -Wl,--sort-section=alignment -fvisibility=hidden -ffast-math -fno-stack-protector -fno-builtin -fmerge-all-constants -fmerge-constants -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-strict-aliasing -fno-rtti -fno-exceptions -fomit-frame-pointer -fno-stack-check -fms-extensions -fdeclspec -fvisibility-inlines-hidden
+OPT := -static -s -O3 -fPIC -pipe -g0 -fexceptions -flto -fsplit-lto-unit -funified-lto -fwhole-program-vtables -fcoroutines -fcoro-aligned-allocation -fchar8_t -fforce-enable-int128 -faligned-allocation -ffast-math -ffunction-sections -ffine-grained-bitfield-accesses -fdata-sections -fdirect-access-external-data -fdiscard-value-names -fmerge-all-constants -fno-rtti -fomit-frame-pointer -fregister-global-dtors-with-atexit -freroll-loops -funroll-loops -fslp-vectorize -fstack-protector-all -fsized-deallocation -fvectorize -fzvector -fvisibility=hidden -fvisibility-inlines-hidden -fapprox-func -falign-functions -falign-loops -ffinite-loops -fshort-enums -finline-functions -finline-hint-functions -fjump-tables -femit-compact-unwind-non-canonical
 
-LOCAL_CFLAGS := $(COMMAND)
-LOCAL_CPPFLAGS := -std=c++17
-LOCAL_LDFLAGS := $(COMMAND)
+LOCAL_CFLAGS := $(OPT)
+LOCAL_CPPFLAGS := -std=c++26
+LOCAL_LDFLAGS := $(OPT)
 
 include $(BUILD_EXECUTABLE)
