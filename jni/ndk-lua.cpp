@@ -5,7 +5,7 @@
 
 using namespace std;
 
-signed main()
+int main()
 {
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
